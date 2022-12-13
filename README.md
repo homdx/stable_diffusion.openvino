@@ -1,5 +1,7 @@
 # stable_diffusion.openvino
 
+![build status](https://github.com/homdx/stable_diffusion.openvino/actions/workflows/docker-image.yml/badge.svg)
+
 Implementation of Text-To-Image generation using Stable Diffusion on Intel CPU.
 <p align="center">
   <img src="data/title.png"/>
