@@ -15,11 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +"%Y%d%d_%H")
   push_docker:
     runs-on: self-hosted
     needs: build
     if: github.ref == 'refs/heads/master'
     steps:
     - name: Tag and push Docker image in master branch only
-      run: export v=$(cat requirements.txt|grep openvino|cut -d'=' -f3); echo openvino ver is $v && docker tag my-image-name:$(date +%s) homdx/stable_diffusion.openvino:$v ; docker push homdx/stable_diffusion.openvino:$v
+      run: export v=$(cat requirements.txt|grep openvino|cut -d'=' -f3); echo openvino ver is $v && docker tag my-image-name:$(date +"%Y%d%d_%H") homdx/stable_diffusion.openvino:$v ; docker push homdx/stable_diffusion.openvino:$v
