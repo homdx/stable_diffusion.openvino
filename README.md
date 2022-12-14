@@ -83,6 +83,11 @@ python demo.py --prompt "Photo of Emilia Clarke with a bright red hair" --init-i
 ```bash
 streamlit run demo_web.py
 ```
+### Docker images
+```bash
+docker pull homdx/stable_diffusion.openvino:2022.1.0
+docker pull homdx/stable_diffusion.openvino:2022.2.0
+```
 
 ## Performance
 
